@@ -1,5 +1,7 @@
 \ProvidesPackage{programmingreport.sty}
 
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{multicol}
 \usepackage{listings}
 \usepackage{minted}
@@ -53,22 +55,21 @@
 }
 
 \newcommand{\heading}[1]{
-\begin{center}
-\large{\underline{\textbf{#1}}} \\
-\end{center}
-\normalsize
+    \begin{center}
+        \large{\underline{\textbf{#1}}}\normalsize \\
+    \end{center}
 }
 
 \newcommand{\subheading}[1]{
-\underline{\textbf{#1}} \\
+    \underline{\textbf{#1}} \\
 }
 
 \newcommand{\code}[1]{
-\textbf{\texttt{#1}}
+    \textbf{\texttt{#1}}
 }
 
 \renewcommand\fcolorbox[4][]{
-  \textcolor{black}{\strut#4}
+    \textcolor{black}{\strut#4}
 }
 
 \newcommand{\newsection}[1]{
@@ -85,8 +86,12 @@
     \newsection{\textbf{PROBLEM #1}}
 }
 
-\newcommand{\mutlilinecell}[2]{
-  \begin{tabular}{@{}#1@{}}#2\end{tabular}
+\newcommand{\multilinecell}[2]{
+    \begin{tabular}{@{}#1@{}}#2\end{tabular}
+}
+
+\newcommand{\tbd}{
+    \huge{\textcolor{red}{\textbf{\textit{\underline{TBD}}}}}\normalsize   \\
 }
 
 \raggedright
