@@ -8,9 +8,16 @@ export ZSH=/home/kedwin/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
-#ZSH_THEME="agnosterzak"
-#ZSH_THEME="powerline"
+#
+#ZSH_THEME="agnoster"
+#ZSH_THEME="bira"
+#ZSH_THEME="candy"
+#ZSH_THEME="fino-time"
+#ZSH_THEME="jonathan"
+#ZSH_THEME="re5et"
+#ZSH_THEME="tjkirch"
+#ZSH_THEME="xiong-chiamiov-plus"
+ZSH_THEME="random"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -18,6 +25,7 @@ ZSH_THEME="agnoster"
 # looking in ~/.oh-my-zsh/themes/
 # An empty array have no effect
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ZSH_THEME_RANDOM_CANDIDATES=( "agnoster" "bira" "candy" "jonathan" "re5et" "tjkirch" "xiong-chiamiov-plus" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -73,6 +81,7 @@ plugins=(
   cp
   tmux
   perms
+  powerline
 )
 
 source $ZSH/oh-my-zsh.sh
