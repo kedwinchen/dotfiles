@@ -97,3 +97,18 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 filetype plugin indent on
 
 set number
+
+" FOR CPE 357
+"augroup C
+"    "number of spaces in a tab
+"    "number of spaces to use for >>
+"    "replace tabs with spaces if want TAB do CTRL-V
+"    au FileType c,cpp,java,perl,python,sh set tabstop=4
+"    au FileType c,cpp,java,perl,python,sh set shiftwidth=4
+"    au FileType c,cpp,java,perl,python,sh set expandtab
+"augroup END
+augroup C
+    au FileType c set tabstop=8
+    au FileType c set shiftwidth=8
+    au FileType c set expandtab
+augroup END
