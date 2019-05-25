@@ -112,3 +112,4 @@ augroup C
     au FileType c set shiftwidth=4
     au FileType c set expandtab
 augroup END
+autocmd BufWritePre * :%s/\s\+$//e
