@@ -108,7 +108,7 @@ set number
 "    au FileType c,cpp,java,perl,python,sh set expandtab
 "augroup END
 augroup C
-    au FileType c set tabstop=8
-    au FileType c set shiftwidth=8
+    au FileType c set tabstop=4
+    au FileType c set shiftwidth=4
     au FileType c set expandtab
 augroup END
