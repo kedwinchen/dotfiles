@@ -439,11 +439,16 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-# Multi-monitor stuff (for only one monitor on the right)
+# Multi-monitor stuff (for monitors on left/right)
 bindsym $mod+Mod1+h move container to output left
 bindsym $mod+Mod1+l move container to output right
 bindsym $mod+Mod1+Shift+h move workspace to output left
 bindsym $mod+Mod1+Shift+l move workspace to output right
+# Multi-monitor stuff (for monitors on up/down)
+bindsym $mod+Mod1+k move container to output up
+bindsym $mod+Mod1+j move container to output down
+bindsym $mod+Mod1+Shift+k move workspace to output up
+bindsym $mod+Mod1+Shift+j move workspace to output down
 # Connect monitor
 bindsym $mod+Shift+backslash exec --no-startup-id "mons -e right"
 # Disconnect monitor
