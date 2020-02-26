@@ -21,9 +21,9 @@ bind -n M-l select-pane -R
 
 unbind [
 unbind ]
-bind-key [ previous-window
-bind-key ] next-window
-bind-key \ last-window
+bind-key '[' previous-window
+bind-key ']' next-window
+bind-key '\' last-window
 
 ################################################################################
 # TMUX Plugin Manager Things
