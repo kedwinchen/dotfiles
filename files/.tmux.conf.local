@@ -294,3 +294,6 @@ tmux_conf_copy_to_os_clipboard=false
 
 # move status line to top
 #set -g status-position top
+
+# -- move my custom stuff to another file since this file may get overwritten --
+if '[ -f ~/.tmux.conf.custom ]' 'source ~/.tmux.conf.custom'
