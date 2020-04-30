@@ -2,12 +2,14 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{multicol}
+\usepackage{flowchart}
+\usepackage[pdfborder={0 0 0}]{hyperref}
 \usepackage{listings}
 \usepackage{minted}
-\usepackage{flowchart}
+\usepackage{multicol}
 \usepackage{tikz}
 \usetikzlibrary{shapes, shapes.geometric, arrows}
+\usepackage{wrapfig}
 
 \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
 \tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
@@ -39,19 +41,33 @@
 % \DueDate
 % \Instructor
 % \Authors
+
+\newcommand{\assignmentInfo}{
+    \begin{center}
+        \huge{\textbf{\HandoutTitle}} \normalsize \\
+        \smallskip
+        \large{\DueDate} \normalsize \\
+        \smallskip
+        \large\textbf{Prepared for:} \Instructor \normalsize \\
+        \smallskip
+        \large\textbf{Prepared by:} \Authors \normalsize
+    \end{center}
+    \hrule
+}
+
 \renewcommand{\titlepage}[2]{
-  \null\vfill\null
-  \begin{center}
-  \huge{\HandoutTitle} \normalsize \\
-  \smallskip\null\smallskip
-  \large{\textbf{\DueDate}} \normalsize \\
-  \bigskip\null\bigskip
-  \textbf{Prepared for:} \\ \smallskip \Instructor \\
-  \bigskip
-  \textbf{Prepared by:} \\ \smallskip \Authors
-  \end{center}
-  \null\vfill\null
-  \newpage
+    \null\vfill\null
+    \begin{center}
+        \huge{\HandoutTitle} \normalsize \\
+        \smallskip\null\smallskip
+        \large{\textbf{\DueDate}} \normalsize \\
+        \bigskip\null\bigskip
+        \textbf{Prepared for:} \\ \smallskip \Instructor \\
+        \bigskip
+        \textbf{Prepared by:} \\ \smallskip \Authors
+    \end{center}
+    \null\vfill\null
+    \newpage
 }
 
 \newcommand{\heading}[1]{
@@ -92,6 +108,15 @@
 
 \newcommand{\tbd}{
     \huge{\textcolor{red}{\textbf{\textit{\underline{TBD}}}}}\normalsize   \\
+}
+
+\newcommand{\answer}[2]{
+    {\textbf{\textcolor{#1}{{#2}}}}
+}
+
+
+\newcommand{\uri}[1]{
+    \large\code{\underline{\href{#1}{#1}}}\normalsize
 }
 
 \raggedright

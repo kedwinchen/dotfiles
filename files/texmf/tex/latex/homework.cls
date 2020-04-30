@@ -52,11 +52,13 @@
     \newcommand{\Instructor}{}
     \newcommand{\Semester}{}
     \newcommand{\Blank}{}
+    \newcommand{\University}{}
+    \newcommand{\ClassificationLevel}{}
 
     % change the values if the user sets these commands
     \newcommand{\SetCourseTitle}[1]{\renewcommand{\CourseTitle}{#1}}
     \newcommand{\SetHandoutTitle}[1]{\renewcommand{\HandoutTitle}{#1}}
-    \newcommand{\SetDueDate}[1]{\renewcommand{\DueDate}{Due: #1}}
+    \newcommand{\SetDueDate}[1]{\renewcommand{\DueDate}{#1}}
     \newcommand{\SetInstructor}[1]{\renewcommand{\Instructor}{#1}}
     \newcommand{\SetSemester}[1]{\renewcommand{\Semester}{#1}}
     \newcommand{\ShowNameBlank}{\renewcommand{\Blank}{\large Name:\rule{2in}{0.5pt}\\}}
@@ -64,6 +66,8 @@
         {0.5pt} Date:\rule{0.75in}{0.5pt}\\}}
     \newcommand{\ShowAllBlanks}{\renewcommand{\Blank}{\large Name:\rule{2in}%
         {0.5pt} Section:\rule{0.75in}{0.5pt} Date:\rule{0.75in}{0.5pt}\\}}
+    \newcommand{\SetUniversity}[1]{\renewcommand{\University}{#1}}
+    \newcommand{\SetClassificationLevel}[1]{\renewcommand{\ClassificationLevel}{#1}}
 
     % redefine the make title command
     \renewcommand\maketitle{
@@ -193,7 +197,8 @@
             }
             {
             \lhead{ \small \CourseTitle }
-            \lfoot{}
+            \lfoot{\University}
+            \rfoot{\ClassificationLevel}
             }
         \rhead{\Blank \small \Semester}
 
@@ -213,7 +218,8 @@
             }
             {
             \lhead{ \small \CourseTitle \\ \Semester\ }
-            \lfoot{}
+            \lfoot{\University}
+            \rfoot{\ClassificationLevel}
             }
     }
 
