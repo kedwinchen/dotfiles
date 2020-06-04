@@ -113,3 +113,16 @@ augroup C
     au FileType c set expandtab
 augroup END
 autocmd BufWritePre * :%s/\s\+$//e
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Folding
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set foldenable
+set foldlevelstart=10
+set foldnestmax=10
+set foldmethod=indent
+
+noremap <space> za
+
+au BufWinLeave * enable
+au BufWinEnter * silent! loadview
