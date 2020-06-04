@@ -1,0 +1,18 @@
+\ProvidesPackage{sourcecode}
+
+\usepackage{minted}
+
+\newcommand{\code}[1]{
+    \textbf{\texttt{#1}}
+}
+
+\newcommand{\uri}[1]{
+    \large\code{\underline{\href{#1}{#1}}}\normalsize
+}
+
+\newcommand{\sourcefile}[3]{
+    \begin{center}
+        \large\textbf{\underline{{\code{#3} (#1)}}}\normalsize
+    \end{center}
+    \inputminted{#2}{#3}
+}
