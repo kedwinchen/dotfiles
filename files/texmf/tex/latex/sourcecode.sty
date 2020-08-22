@@ -1,6 +1,19 @@
 \ProvidesPackage{sourcecode}
 
 \usepackage{minted}
+\usepackage{hyperref}
+
+% To avoid the colored boxes around hyperlinks
+\renewcommand\fcolorbox[4][]{
+    \textcolor{black}{\strut#4}
+}
+
+%% \hypersetup{
+%%     colorlinks=true,
+%%     linkcolor=blue,
+%%     filecolor=magenta,
+%%     urlcolor=cyan,
+%% }
 
 \newcommand{\code}[1]{
     \textbf{\texttt{#1}}
@@ -10,9 +23,17 @@
     \large\code{\underline{\href{#1}{#1}}}\normalsize
 }
 
-\newcommand{\sourcefile}[3]{
+\newcommand{\sourcefile}[2]{
     \begin{center}
-        \large\textbf{\underline{{\code{#3} (#1)}}}\normalsize
+        \large\textbf{\underline{{\code{#2}}}}\normalsize
     \end{center}
-    \inputminted{#2}{#3}
+    \inputminted{#1}{#2}
 }
+
+\newcommand{\SourceFile}[2]{
+    \subsection{\large{\code{#2}\normalsize}}
+    \inputminted{#1}{#2}
+    \newpage
+}
+
+

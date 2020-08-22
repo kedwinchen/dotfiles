@@ -54,6 +54,7 @@
     \newcommand{\Blank}{}
     \newcommand{\University}{}
     \newcommand{\ClassificationLevel}{}
+    \newcommand{\Authors}{}
 
     % change the values if the user sets these commands
     \newcommand{\SetCourseTitle}[1]{\renewcommand{\CourseTitle}{#1}}
@@ -68,6 +69,7 @@
         {0.5pt} Section:\rule{0.75in}{0.5pt} Date:\rule{0.75in}{0.5pt}\\}}
     \newcommand{\SetUniversity}[1]{\renewcommand{\University}{#1}}
     \newcommand{\SetClassificationLevel}[1]{\renewcommand{\ClassificationLevel}{#1}}
+    \newcommand{\SetAuthors}[1]{\renewcommand{\Authors}{#1}}
 
     % redefine the make title command
     \renewcommand\maketitle{
@@ -82,6 +84,18 @@
             \large\textbf{Prepared by:} \Authors \normalsize
         \end{center}
         \hrule
+    }
+
+    \newcommand\documentInfo{
+        \begin{center}
+            \huge{\textbf{\HandoutTitle}} \normalsize \\
+            \smallskip
+            \large{\DueDate} \normalsize \\
+            \smallskip
+            \large\textbf{Prepared for:} \Instructor \normalsize \\
+            \smallskip
+            \large\textbf{Prepared by:} \Authors \normalsize
+        \end{center}
     }
 
     % Redefine the sectioning commands \section \subsection and \subsubsection
