@@ -112,7 +112,14 @@ augroup C
     au FileType c set shiftwidth=4
     au FileType c set expandtab
 augroup END
-autocmd BufWritePre * :%s/\s\+$//e
+
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfunction
+
+autocmd BufWritePre * :call TrimWhitespace()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Folding
@@ -120,9 +127,10 @@ autocmd BufWritePre * :%s/\s\+$//e
 set foldenable
 set foldlevelstart=10
 set foldnestmax=10
-set foldmethod=indent
+set foldmethod=syntax
+"set foldmethod=indent
 
 noremap <space> za
 
-au BufWinLeave * enable
-au BufWinEnter * silent! loadview
+""" au BufWinLeave * enable
+""" au BufWinEnter * silent! loadview
