@@ -1,0 +1,13 @@
+#!/bin/bash
+
+export readonly BROWSER=firefox
+export readonly EDITOR=nvim
+export readonly PAGER=less
+
+export PATH="${PATH}:${HOME}/bin"
+
+export readonly HISTSIZE=-1
+export readonly HISTFILESIZE=-1
+export readonly HISTCONTROL=ignoredups:erasedups
+export PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
+
