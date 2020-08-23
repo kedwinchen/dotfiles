@@ -7,3 +7,9 @@
 [submodule "powerlevel10k"]
 	path = powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k
+[submodule "ohmytmux"]
+	path = ohmytmux
+	url = https://github.com/gpakosz/.tmux
+[submodule "tpm"]
+	path = tpm
+	url = https://github.com/tmux-plugins/tpm
