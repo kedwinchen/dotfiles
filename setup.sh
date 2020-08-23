@@ -14,7 +14,7 @@ DIR="${DIR}/files"
 cd ${DIR}
 
 
-find . -type d -exec echo mkdir -p ~/{} \;
+find . -type d -exec mkdir -p ~/{} \;
 find . -type f -or -type l | xargs -n 1 --replace='{}' -P 8 -- ln --verbose -s $(pwd)/{} ${HOME}/{}
 
 ### if [[ ! -d ~/.tmux/plugins ]] ; then
