@@ -16,4 +16,4 @@ cd "${DIR}/ohmytmux"
 ###find . -iname ".tmux.*" | xargs -I '{}' -n 1 -P 4 -- sed -i "s/.tmux.conf/.tmux.oh-my-tmux.conf/g" {}
 
 # change the reference, so that the magic works correctly
-sed -i "s/.tmux.conf/.tmux.oh-my-tmux.conf/g" ".tmux.conf"
+sed -i "s/\.tmux\.conf/\.tmux\.oh-my-tmux\.conf/g" ".tmux.conf"
