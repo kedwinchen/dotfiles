@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# set -euo pipefaii
+
 ## Solve for the current directory to use as root of the repo
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
@@ -9,15 +11,41 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
+cd ${DIR}
+if [[ -d "./.git" ]] ; then
+    git submodule update --init --recursive
+fi
+
+bash ./patch-oh-my-tmux.sh
+
 DIR="${DIR}/files"
 
-cd ${DIR}
+cd "${DIR}"
 
+now () {
+    printf "%s" "$(date +%Y%m%d_%H%M%S%z)"
+}
 
-find . -type d -exec mkdir -p ~/{} \;
-find . -type f -or -type l | xargs -n 1 --replace='{}' -P 8 -- ln --verbose -s $(pwd)/{} ${HOME}/{}
+create_dotfile_symlink () {
+    THE_FILE="${1}"
+    FILE_SRC="${DIR}/${THE_FILE}"
+    FILE_DST="${HOME}/${THE_FILE}"
 
-### if [[ ! -d ~/.tmux/plugins ]] ; then
-###     echo mkdir -p ~/.tmux/plugins
-###     echo git clone https://github.com/tmux-plugins/tpm ~/.tmux/
-### fi
+    if [[ -e "${FILE_DEST}" ]] ; then
+        mv "${FILE_DST}" "${FILE_DST}.dotfile-setup.$(now)"
+    fi
+
+    ln -v -s "${FILE_SRC}" "${FILE_DST}"
+
+    ### if [[ $? -ne 0 ]] ; then
+    ###     ln -v -f -s "${FILE_SRC}" "${FILE_DST}"
+    ### fi
+}
+
+export DIR
+export -f now
+export -f create_dotfile_symlink
+
+# Use "xargs" instead of "-exec" for parallelization
+find . -type d | xargs -n 1 -I '{}' -P 8 -- mkdir -p ${HOME}/{}
+find . -type f -or -type l | cut -c3- | xargs -n 1 -I '{}' -P 8 -- bash -c "create_dotfile_symlink '{}'"
