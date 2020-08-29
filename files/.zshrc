@@ -13,6 +13,7 @@ function _home_rc {
     _source_if_exists "${HOME}/${1}"
 }
 
+_home_rc ".zshrc.manjaro_default"
 _home_rc ".zshrc.ohmyzsh"
 _home_rc ".zsh_alias"
 _home_rc ".zsh_export"

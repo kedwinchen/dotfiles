@@ -6,8 +6,11 @@ export readonly PAGER=less
 
 export PATH="${HOME}/bin:${PATH}"
 
-export readonly HISTSIZE=-1
-export readonly HISTFILESIZE=-1
+# better zsh history
+export readonly HISTSIZE=1000000000
+export readonly SAVEHIST=1000000000
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
 export readonly HISTCONTROL=ignoredups:erasedups
 export PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
