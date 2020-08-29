@@ -62,8 +62,8 @@ bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec $terminal -e 'mocp'
-bindsym $mod+F6 "firefox --private-window"
-bindsym $mod+F7 "chromium --incognito"
+bindsym $mod+F6 exec "firefox --private-window"
+bindsym $mod+F7 exec "chromium --incognito"
 bindsym $mod+F9 exec $terminal -e ranger
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
