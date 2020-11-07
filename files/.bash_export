@@ -11,3 +11,13 @@ export readonly HISTFILESIZE=-1
 export readonly HISTCONTROL=ignoredups:erasedups
 export PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
+shopt -s histappend
+shopt -s cdspell
+shopt -s autocd
+
+set -o vi
+umask 077
+
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
