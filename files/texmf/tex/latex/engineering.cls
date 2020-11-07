@@ -133,7 +133,7 @@
     \newenvironment{solution}{\color{\solncolor} \em }{}
 
     % \showsoln displays the solutions for the document.
-    \newcommand{\showsoln}{\setboolean{@showsolns}{true} \pagestyle{homework}}
+    \newcommand{\showsoln}{\setboolean{@showsolns}{true} \pagestyle{engineering}}
     % \hidesoln hides the solutions for the document.
     \newcommand{\hidesoln}{\setboolean{@showsolns}{false}}
     % This is the solution stamp put at the top and bottom of each page.
@@ -202,6 +202,7 @@
     }
 
     %\ExecuteOptions{solution}
+
 % --- Define the Header and Footer Styles ---
 
     % The style for the page with \maketitle called on it.
