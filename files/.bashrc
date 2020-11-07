@@ -17,10 +17,3 @@ _home_rc ".bashrc.manjaro_default"
 _home_rc ".bash_alias"
 _home_rc ".bash_export"
 _source_if_exists "/etc/profile.d/autojump.bash"
-
-shopt -s histappend
-shopt -s cdspell
-shopt -s autocd
-
-set -o vi
-umask 077
