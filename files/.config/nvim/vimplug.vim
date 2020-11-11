@@ -14,11 +14,17 @@ Plug 'vim-syntastic/syntastic'
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 Plug 'itchyny/lightline.vim'
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'dense-analysis/ale'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
 
 call plug#end()
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+let g:OmniSharp_server_stdio = 1
 
 if !has('gui_running')
     set t_Co=256
