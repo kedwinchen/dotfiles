@@ -1,9 +1,9 @@
 configuration {
-  modi: "window,run,ssh";
+  modi: "window,drun,run,ssh,windowcd,combi";
 //  width: 50;
 //  lines: 15;
 //  columns: 1;
-  font: "Fira Code Nerd Font Complete 12";
+  font: "FiraCode Nerd Font Mono 12";
 //  bw: 1;
 //  location: 0;
 //  padding: 5;
@@ -34,7 +34,7 @@ configuration {
 //  auto-select: false;
 //  parse-hosts: false;
   parse-known-hosts: true;
-  combi-modi: "window,run,ssh";
+  combi-modi: "window,drun";
 //  matching: "normal";
 //  tokenize: true;
 //  m: "-5";
