@@ -14,6 +14,7 @@ setopt hist_ignore_space
 export readonly HISTCONTROL=ignoredups:erasedups
 export PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
-export GTK_IM_MODULE=ibus
+# xim instead of ibus for firejail
+export GTK_IM_MODULE=xim
 export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
+export QT_IM_MODULE=xim
