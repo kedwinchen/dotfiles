@@ -31,7 +31,7 @@ create_dotfile_symlink () {
     FILE_SRC="${DIR}/${THE_FILE}"
     FILE_DST="${HOME}/${THE_FILE}"
 
-    if [[ -e "${FILE_DEST}" ]] ; then
+    if [[ -e "${FILE_DST}" ]] ; then
         mv "${FILE_DST}" "${FILE_DST}.dotfile-setup.$(now)"
     fi
 
