@@ -31,6 +31,7 @@ floating_modifier $alt
 # start a terminal
 set $terminal kitty
 bindsym $mod+Return exec $terminal
+bindsym $mod+Shift+Return exec "st -f 'FiraCode Nerd Font Mono:style=Retina,Regular:size=12'"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -63,7 +64,7 @@ bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
-bindsym $mod+F5 exec $terminal -e 'mocp'
+#bindsym $mod+F5 exec $terminal -e 'mocp'
 bindsym $mod+F6 exec "firefox --private-window"
 bindsym $mod+F7 exec "chromium --incognito"
 bindsym $mod+F9 exec $terminal -e ranger
@@ -246,14 +247,14 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Set shut down, restart and locking features
 bindsym $mod+F12 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (Shift+r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+r exec --no-startup-id i3exit reboot, mode "default"
     bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
     # exit system mode: "Enter" or "Escape"
@@ -287,6 +288,7 @@ mode "resize" {
 
 # Lock screen
 bindsym $mod+F11 exec --no-startup-id blurlock
+bindsym $mod+Shift+F11 exec --no-startup-id "i3lock -fec 000000"
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -302,8 +304,11 @@ exec --no-startup-id start_conky_maia
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+
+# other configurations to apply on boot
 exec_always --no-startup-id "ibus-daemon -x -d -r"
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id "xmodmap ~/.xmodmap"
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -351,8 +356,10 @@ set_from_resource $term_color15    color15
 #############################
 
 # Set inner/outer gaps
-gaps inner 14
-gaps outer -2
+# gaps inner 14
+# gaps outer -2
+gaps inner 0
+gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>

@@ -1,3 +1,9 @@
 export GTK_IM_MODULE=xim
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=xim
+
+# Use Alt_R as Compose key
+setxkbmap -option compose:ralt
+
+# Rebind Caps Lock to Control
+xmodmap ~/.xmodmap
