@@ -19,20 +19,33 @@
     \textbf{\texttt{#1}}
 }
 
+\newcommand{\vcode}[1]{
+    \begin{verbatim*}#1\end{verbatim*}
+}
+
 \newcommand{\uri}[1]{
     \large\code{\underline{\href{#1}{#1}}}\normalsize
 }
 
+% includes a source code file, with a large heading
 \newcommand{\sourcefile}[2]{
     \begin{center}
         \large\textbf{\underline{{\code{#2}}}}\normalsize
     \end{center}
     \inputminted{#1}{#2}
+    \vfill
+    (end of {\code{#2}})
+    \vfill
+    \newpage
 }
 
+% Same as \sourcefile{}{}, but as a subsection
 \newcommand{\SourceFile}[2]{
     \subsection{\large{\code{#2}\normalsize}}
     \inputminted{#1}{#2}
+    \vfill
+    (end of {\code{#2}})
+    \vfill
     \newpage
 }
 
