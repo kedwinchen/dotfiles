@@ -1,3 +1,4 @@
 *.orig
 *_old
 __pycache__/
+files/.config/polybar/modules/banner.ini
