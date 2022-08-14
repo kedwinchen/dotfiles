@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export readonly BROWSER=firefox
+export readonly BROWSER=chromium
 export readonly EDITOR=nvim
 export readonly PAGER=less
 

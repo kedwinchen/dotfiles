@@ -20,3 +20,6 @@ _home_rc ".zsh_export"
 _source_if_exists "/etc/profile.d/autojump.zsh"
 _home_rc "powerlevel10k/powerlevel10k.zsh-theme"
 _home_rc ".p10k.zsh"
+
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u

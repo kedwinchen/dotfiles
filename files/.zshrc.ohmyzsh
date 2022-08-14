@@ -69,7 +69,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode tmux git perms autojump)
+plugins=(vi-mode tmux fzf git perms autojump helm kubectl kubectx)
 
 source $ZSH/oh-my-zsh.sh
 
