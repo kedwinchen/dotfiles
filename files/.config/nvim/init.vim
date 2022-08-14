@@ -49,5 +49,6 @@ endfun
 if has('nvim')
     set mouse=a
     call SourceIfExists("~/.config/nvim/vimplug.vim")
+    call SourceIfExists("~/.config/nvim/style.vim")
 endif
 
